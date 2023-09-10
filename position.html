@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position practice</title>
+</head>
+
+<body style="
+height: 3000px; 
+padding-top: 60px;
+padding-left: 80px;">
+
+    <div style="
+    background-color: black; 
+    color: white; 
+    position: fixed; 
+    top: 0; 
+    height: 50px; 
+    left: 0; 
+    right: 0;
+    z-index: 1;
+    ">header</div>
+
+    <div style="
+    background-color: green; 
+    color: white; 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 50px;
+    width: 72px;
+    ">sidebar
+
+        <!-- Example  z-index
+    position absolute inside a position fixed
+
+    is placing the absolute element relative to this position fixed
+    
+-->
+        <div style="
+    position: absolute;
+    background-color: red;
+    color: white;
+    /* left: 10px; */
+    right: 10px;
+    top: 60px;
+    ">absolute</div>
+
+        <div style="
+    position: absolute;
+    background-color: red;
+    color: white;
+    right: 0;
+    top: 0;
+    ">X</div>
+
+    </div>
+
+    <!-- position absolute 
+    position absolute takes the same values as position fixed
+    such as 
+    left: 0;
+    bottom: 0;
+    top: 50px;
+    width: 72px;
+
+    but they behave a liitle bit differently
+    if I take 10px left so there will be 10 pix 
+    between our element and the left side of our page
+-->
+
+    <div style="
+    position: absolute;
+    background-color: red;
+    color: white;
+    /* left: 10px; */
+    right: 10px;
+    top: 60px;
+    ">absolute</div>
+
+    <div style="
+    background-color: lightblue; 
+    height: 200px; 
+    width: 200px;
+    position: static;">div1</div>
+
+    <div style="
+    background-color: lightpink; 
+    height: 200px; 
+    width: 200px;
+    position: relative;
+    "
+    >div2
+
+    <!-- right of 10 pixels now means 10 px from 
+    the right of the position relative, not 10 px 
+    from the right of the page 
+    top of 60 px now means 60 px from the top of the 
+    position relative, not 60 px from the top of the page.
+1.
+    When position absolute is inside position relative
+    this will be posiotioned on the element, not on the page.
+
+2.  Position relative causes this whole element to display normally.
+
+So for the time on the video we put
+inside position relative -> element with position absolute
+
+-->
+
+    <div style="
+        position: absolute;
+        background-color: black;
+        color: white;
+        right: 10px;
+        bottom: 10px;
+    ">5:00
+    </div>
+
+</div>
+
+</body>
+
+</html>

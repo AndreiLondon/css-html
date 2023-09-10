@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+dl {
+  border: 2px dashed orange;
+  background-color: #ffffee;
+}
+
+/*
+In CSS, the double colon :: is used to define and style pseudo-elements. 
+Pseudo-elements are used to style parts of an element, 
+such as its first line or first letter, without adding additional 
+markup to the HTML document.
+
+::before: This pseudo-element inserts content before the selected element. 
+It is often used in combination with the content property to add 
+decorative or informational content.
+::after: this pseudo-element inserts content after the selected element.
+::first-line: This pseudo-element targets and 
+styles the first line of text within a block-level element.
+
+Keep in mind that some pseudo-elements, 
+like ::before and ::after, can only be used with elements that have 
+a content property specified.
+
+It's important to use the correct number of colons for pseudo-elements. 
+In modern CSS, the double colon :: is the preferred syntax for pseudo-elements, 
+while the single colon : is typically used for pseudo-classes 
+(e.g., :hover, :active, :focus). However, both single and double colons 
+are still valid for most pseudo-elements in modern browsers, 
+so you may come across both forms in existing code.
+
+
+*/

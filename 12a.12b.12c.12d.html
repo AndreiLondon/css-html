@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12a.12b.12c.12d.</title>
+</head>
+
+
+<body style="padding-bottom: 1000px;">
+    <div style="
+    display: flex;
+    flex-direction: row;
+    ">
+        <div style="background-color: lightblue; width: 200px;">200px</div>
+        <div style="background-color: lightpink; width: 75px;">75px</div>
+    </div>
+
+    <div style="
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    ">
+        <div style="background-color: lightblue; width: 50px;">item1</div>
+        <div style="background-color: lightpink;
+        /* flex: 1 is the flex box equivalent to 1fr in grid */
+        flex: 1;">item2</div>
+        <div style="background-color: lightblue; width: 75px;">item3</div>
+    </div>
+
+    <div style="
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    ">
+        <div style="background-color: lightpink; width: 50px;">item1</div>
+        <div style="background-color: lightpink; width: 50px;">item2</div>
+        <div style="background-color: lightpink; width: 50px;">item3</div>
+        <div style="background-color: lightpink; width: 50px;">item4</div>
+    </div>
+
+    <!-- differences between grid and flexbox
+        1. The layout is more rigid (for Grid)
+        means if i change the oder of the raws even if i indicated width: 100px it takes 1fr instead.
+        2. However on flex the elements take their width along with them if they move around
+        Grid = rigid layout
+        Flexbox = flexible layout
+
+        Advantages of flexbox
+        Navbar when you loged in you can see 4 battons for instance. When you log out you can see only 3.
+        So the layout actually changes because we have only 3 elements.
+    -->
+    <!-- Creating a header -->
+    <div style="
+    margin-top: 30px;
+    height: 70px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    display: flex;
+    flex-direction: row;
+    /* this determines how these elements are laid out horizontally. Start - begining, End - at the end */
+    justify-content: space-between;
+
+    ">
+   
+        <div class="left" style="background-color: lightpink; width: 100px;">item1</div>
+        <div class="right" style="background-color: lightpink; width: 100px;">item2</div>
+
+    </div>
+
+</body>
+
+</html>

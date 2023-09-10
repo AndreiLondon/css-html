@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        div {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .post-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .list-of-categories {
+            display: flex;
+            overflow-x: scroll;
+            white-space: nowrap;
+            margin-bottom: 10px;
+        }
+
+        .category {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .category.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .post {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-and-nickname-container {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+
+        .post-column {
+            flex: 1;
+        }
+
+        .post-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .post-author {
+            font-weight: bold;
+            margin-right: 5px;
+            margin-left: 7px;
+        }
+
+        .text-area {
+            width: 400px;
+            height: 200px;
+            border-color: rgb(220, 220, 220);
+            border-radius: 8px;
+            padding: 10px;
+            box-sizing: border-box; /* Include padding in width */
+            resize: none; /* Disable textarea resize */
+        }
+
+        .post-button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            
+        }
+
+        .post-button {
+            display: inline-block;
+            background-color: rgb(24, 119, 242);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: opacity 0.15s;
+        }
+
+        .post-button:hover {
+            opacity: 0.8;
+        }
+
+        .post-button:active {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Categories -->
+<div class="post-container">
+    <div class="list-of-categories">
+        <div class="category" data-category="Category 1">C++</div>
+        <div class="category" data-category="Category 2">C#</div>
+        <div class="category" data-category="Category 3">Java</div>
+        <div class="category" data-category="Category 4">JavaScript</div>
+        <div class="category" data-category="Category 5">HTML</div>
+        <div class="category" data-category="Category 6">CSS</div>
+        <div class="category" data-category="Category 7">PHP</div>
+        <div class="category" data-category="Category 8">Go</div>
+        <div class="category" data-category="Category 9">Rust</div>
+        <div class="category" data-category="Category 10">Node</div>
+
+        <!-- Add more categories here -->
+    </div>
+
+    <!-- Icon and Nickname -->
+    <div class="post">
+        <div class="icon-and-nickname-container">
+            <img class="icon" src="images/me.jpeg" alt="">
+            <div class="post-column">
+                <div class="post-header">
+                    <div class="post-author">mrbin</div>
+                </div>
+            </div>
+        </div>
+        <div class="post-content-container">
+            <div class="text-content">
+                <textarea class="text-area" id="text-area"></textarea>
+            </div>
+            <div class="post-button-container">
+                <button class="post-button">Post</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const categories = document.querySelectorAll('.category');
+    const postButton = document.querySelector('.post-button');
+
+    let selectedCategoryList = [];
+
+    categories.forEach(category => {
+        category.addEventListener('click', () => {
+            if (category.classList.contains('active')) {
+                category.classList.remove('active');
+                selectedCategoryList = selectedCategoryList.filter(cat => cat !== category.getAttribute('data-category'));
+            } else {
+                category.classList.add('active');
+                selectedCategoryList.push(category.getAttribute('data-category'));
+            }
+        });
+    });
+
+    postButton.addEventListener('click', () => {
+        const textArea = document.querySelector('.text-area');
+        const postText = textArea.value;
+        const selectedCategoriesString = selectedCategoryList.join(', ');
+
+        // Perform your post submission logic here
+        console.log('Posted Text:', postText);
+        console.log('Selected Categories:', selectedCategoriesString);
+
+        // Clear the text area and selected categories
+        textArea.value = '';
+        selectedCategoryList = [];
+        categories.forEach(category => category.classList.remove('active'));
+    });
+</script>
+
+</body>
+</html>
+

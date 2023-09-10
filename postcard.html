@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        div {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .post-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .selected-category {
+            /* Add some styles if needed */
+        }
+
+        .list-of-categories {
+            /* Add some styles if needed */
+        }
+
+        .post {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 350px;
+        }
+
+        .icon-and-nickname-container {
+            margin-right: 10px;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+
+        .post-column {
+            flex: 1;
+        }
+
+        .post-header {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5px;
+        }
+
+        .post-author {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .text-area {
+            width: 350px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Categories -->
+<div class="post-container">
+    <div class="categories-container">
+        <div class="selected-category">Selected Category: Sample Category</div>
+        <div class="list-of-categories">
+            <!-- List of categories goes here -->
+        </div>
+    </div>
+
+    <!-- Icon and Nickname -->
+    <div class="post">
+        <div class="icon-and-nickname-container">
+            <img class="icon" src="images/me.jpeg" alt="">
+        </div>
+        <div class="post-column">
+            <div class="post-header">
+                <div class="post-author">mrbin</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Text and Button -->
+    <div class="post-content-container">
+        <div class="text-content">
+            <input class="text-area" type="text" id="text-area">
+        </div>
+        <div class="post-button-container">
+            <button class="post-button">Post</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

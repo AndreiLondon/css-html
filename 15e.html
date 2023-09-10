@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15e.</title>
+</head>
+
+<body>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        .product-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .product-image {
+            width: 220px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /*
+        position: relative;: This property specifies the positioning 
+        context for the element. When an element has position: relative;, 
+        it establishes a new positioning context for its child elements. 
+        This means that any child elements positioned absolutely 
+        inside .product-container will be positioned relative to it. 
+        In other words, their position will be calculated based on 
+        the top, right, bottom, and left properties 
+        relative to the .product-container.
+        
+        display: inline-block;: This property determines how the element 
+        is displayed within the document flow. inline-block is a display 
+        value that combines features of inline and block-level elements. 
+        It allows the element to flow inline like text (allowing other 
+        elements to be on the same line) while still maintaining block-level 
+        properties like setting width, height, margins, and paddings.
+        
+        So, when you apply .product-container to an HTML element, 
+        it will have the following characteristics:
+        
+        The element will act like an inline-level element, meaning 
+        it can be placed alongside other inline elements within 
+        the same line of text.
+        
+        However, it will also behave like a block-level element 
+        in terms of how you can set its dimensions (width and height), 
+        margins, paddings, and other box-related properties.
+        
+        It establishes a positioning context, which can affect 
+        how absolutely positioned child elements are placed relative to it.
+        
+        This combination of position: relative; and display: 
+        inline-block; is often used when you want to create a container 
+        for a specific component (like a product card) and have control 
+        over its dimensions and positioning. Additionally, the position: relative; 
+        is particularly useful if you plan to use absolute positioning 
+        for certain elements inside the container, as it provides a 
+        reference point for their positioning.
+
+
+        */
+        .promotion {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            background-color: black;
+            color: white;
+            font-family: Arial;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+
+        .bottom-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .add-to-cart-button {
+            background-color: white;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    </style>
+    <div class="product-container">
+        <img class="product-image" src="images/style.png">
+        <div class="promotion">20% OFF</div>
+        <div class="bottom-overlay">
+            <button class="add-to-cart-button">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

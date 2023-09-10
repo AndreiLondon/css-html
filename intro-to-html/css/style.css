@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2 rem;
+}
+
+ul {
+    font-family:'Helvetica';
+    /* color: aquamarine; */
+    font-size: 1.2rem;
+}
+/* .nested {
+    color: yellow;
+      
+} */
+/* #last, .nested {
+    color: purple
+} */
+
+ul ul a {
+    color: red;
+}
+ul ol ul ol li {
+    border: 1px solid blue;
+}
+
+/* parent-child selector */
+ul.nested > li {
+    border: 2px dotted black;
+}
+
+ul.nested > li ~ li {
+    color: green;
+    padding: 1rem;
+}
+/*
+The > symbol is a direct child combinator. 
+It specifies that the styles will only apply to direct 
+children of the selected element. In this case, 
+it means the styles will only apply to <li> elements 
+that are direct children of the targeted <ul> element.
+
+the tilde (~) symbol is known as the "general sibling combinator." 
+It is used to select elements that are siblings of a specified 
+element and appear after it in the HTML document structure.
+*/
+
+/* simple attribute value */
+[title] {
+    background-color: green;
+}
+
+/* arbitrary substring attribute value */
+[title*="guess"] {
+    border: 5px dashed black;
+}
+[title*="Guess"] {
+    border: 3px dashed red
+}
+
+/* beginning substring selector */
+[title^="Guess"] {
+    background-color: orange;
+}
+
+/* ending substring selector */
+[title$="this"] {
+    background-color: brown;
+    color: yellow;
+    border: 7px dashed black;
+}
+
+/* using the attribute selectors, select all links 
+to PDFs on the page and put a (PDF) after it.
+Alternatively, make them your favourite color. */
+
+[href*=".pdf"] {
+    color: pink;
+}
+[href$=".pdf"]::after {
+    content: '(PDF)';
+}
+
+/*
+*=: This symbol is used for a "substring matching" attribute selector. 
+It targets elements whose attribute contains a 
+specific substring anywhere within its value.
+Syntax: [attribute*=value]
+
+Example: [title*="example"] targets elements with a "title" 
+attribute containing the substring "example."
+
+^=: This symbol represents a "prefix matching" attribute selector. 
+It targets elements whose attribute starts with a specific value.
+Syntax: [attribute^=value]
+
+Example: [title^="start"] targets elements with a "title" 
+attribute that begins with the substring "start."
+
+$=: This symbol is a "suffix matching" attribute selector. 
+It targets elements whose attribute ends with a specific value.
+Syntax: [attribute$=value]
+
+Example: [href$=".pdf"] targets elements with an "href" 
+attribute that ends with the ".pdf" extension.
+
+=: The equal sign is a simple "exact matching" attribute selector. 
+It targets elements whose attribute exactly matches a given value.
+Syntax: [attribute=value]
+
+Example: [type="text"] targets input elements 
+with a "type" attribute set to "text." 
+*/
+
+/*
+Elements, classes, IDs
+Groups of selectors
+Descendent selectors
+Parent-child
+Adjacent/general sibling
+Attribute selectors
+*/

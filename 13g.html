@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13g.</title>
+</head>
+
+<style>
+    div {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .tweet {
+        display: flex;
+        flex-direction: row;
+        width: 420px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .profile-picture-column {
+        margin-right: 10px;
+    }
+
+    .profile-picture {
+        height: 50px;
+        width: 50px;
+        border-radius: 30px;
+        object-fit: cover;
+    }
+
+    .tweet-column {
+        flex: 1;
+    }
+
+
+    /*
+    object-fit is a CSS property used to control 
+    how an <img> or <video> element's content should be 
+    resized and fitted within its container. 
+    The object-fit: cover; value specifically instructs the 
+    browser to scale the content to cover the entire container 
+    while maintaining its aspect ratio.
+    
+    Here's how object-fit: cover; works:
+    When you apply object-fit: cover; to an <img> or <video> element, 
+    the browser will do the following:
+    
+    Resize the content (image or video) to completely cover the container.
+    Maintain the aspect ratio of the content, so it doesn't get distorted.
+    Crop any excess content that doesn't fit within the container's dimensions.
+    This is particularly useful when you want to ensure that an image 
+    or video fills its container, even if the aspect ratios are different. 
+    It allows you to create visually appealing designs without 
+    distorting the content.
+
+    A common shortcut is to use flex: 1;, 
+    which is equivalent to flex: 1 1 0;. 
+    This means the flex item will grow and shrink equally with its siblings, 
+    taking up all available space, and will have an initial size of 0.
+
+    .container {
+        display: flex;
+    }
+
+    .item {
+        flex: 1;
+    }
+
+*/
+    .tweet-header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+    }
+
+    .tweet-author {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    .tweet-author-handle {
+        color: rgb(111, 111, 111);
+    }
+
+    .tweet-content {
+        /* space between lines */
+        line-height: 20px;
+        /* bottom space */
+        margin-bottom: 15px;
+    }
+
+    .video-preview {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(200, 200, 200);
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    /*
+
+    The overflow: hidden; CSS property is used to control how content 
+    that overflows the boundaries of its container is displayed. 
+    When applied, it hides any content that goes beyond the container's 
+    dimensions and clips it from view.
+    Here's a breakdown of how it works:
+    overflow: This property controls the behavior of content that overflows 
+    its container. It can take several values:
+    visible: The default value. Content overflows the container without 
+    any clipping, possibly obscuring other content.
+    hidden: Content that overflows is clipped and not visible outside 
+    the container's boundaries.
+    scroll: Adds scrollbars to the container, allowing users to scroll 
+    to see the hidden content.
+    auto: Similar to scroll, but scrollbars appear only when needed.
+    hidden: When you set overflow: hidden;, any content that extends 
+    beyond the container's dimensions will be hidden and not displayed.
+    
+    */
+
+    .thumbnail-column {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(220, 220, 220);
+        margin-right: 10px;
+    }
+
+    .video-info-column {
+        flex: 1;
+    }
+    .video-website {
+        color: rgb(111, 111, 111);
+        margin-bottom: 3px;
+    }
+
+    .video-title {
+        line-height: 22px;
+    }
+
+</style>
+
+<body>
+    <div class="tweet">
+        <div class="profile-picture-column">
+            <img class="profile-picture" src="images/me.jpeg">
+        </div>
+        <div class="tweet-column">
+            <div class="tweet-header">
+                <div class="tweet-author">simplifycode.io</div>
+                <div class="tweet-author-handle">@simplifythecode</div>
+            </div>
+            <div class="tweet-content">
+                What is backend web development? A complete overview. New video is up!
+            </div>
+            <div class="video-preview">
+                <div class="thumbnail-column"></div>
+                <div class="video-info-column">
+                    <div class="video-website">youtube.com</div>
+                    <div class="video-title">
+                        Backend web development - a complete overview (2021)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

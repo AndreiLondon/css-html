@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+div {
+    max-width: 400px;
+    border-bottom: 1px solid #999;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    /* margin: 1rem; */
+    /* flex-flow: row wrap; */
+    padding: 1rem;
+    
+}
+
+/*
+display: flex;: This property is part of CSS Flexbox, 
+which is a layout model used to arrange elements within a container. 
+When you set an element's display to flex, it becomes a flex container, 
+and its direct children become flex items. 
+The flex items inside the container can be flexed and positioned 
+based on various flex-related properties.
+
+flex-flow: row wrap;: This property is a shorthand for two separate 
+flex-related properties: flex-direction and flex-wrap.
+
+flex-direction: row;: This sets the main axis of the flex container horizontally, 
+which means the flex items will be laid out in a row from left to right.
+
+flex-wrap: wrap;: This specifies that the flex items should wrap 
+to a new line if they exceed the width of the flex container. 
+In other words, when the container's width is not sufficient 
+to accommodate all the flex items in a single row, they will wrap 
+to the next line.
+
+before
+┌──────────────────────────────┐
+│ [item 1] [item 2] [item 3]   │
+└──────────────────────────────┘
+
+after
+
+┌──────────────────────────────┐
+│ [item 1] [item 2]            │
+│ [item 3]                     │
+└──────────────────────────────┘
+
+In this example, the <div> element becomes a flex container, 
+and its direct children (the flex items) will be displayed 
+in a row from left to right. If the total width of the flex 
+items exceeds the width of the container, they will wrap to 
+the next line, creating a new row.
+
+By using Flexbox with flex-flow: row wrap, you can easily 
+create responsive layouts and adjust the arrangement of elements 
+based on available space on the page. Flexbox is powerful and 
+versatile, making it a popular choice for modern web design and layout.
+
+
+*/
+
+div:last-child {
+    border: none;
+}
+
+
+div > * {
+    flex-basis: 50%;
+    padding: 1rem;
+}
+dt {
+    font-weight: bold;
+    grid-column-start: 1;
+    /* border: 1px dotted blue; */
+
+
+}
+
+dd {
+    /* TRouBLe*/
+    margin: 0;
+    grid-column-start: 2;
+    /* border: 1px solid red; */
+}
+dd:first-of-type {
+    grid-row-start: 1;
+}
+
+div:nth-child(even) {
+    background-color: #eee;
+}
